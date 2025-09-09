@@ -29,7 +29,7 @@
 
 @class CTASIDataDecompressor;
 
-extern NSString *ASIHTTPRequestVersion;
+extern NSString *ASIHTTPRequestVersion_qy;
 
 // Make targeting different platforms more reliable
 // See: http://www.blumtnwerx.com/blog/2009/06/cross-sdk-code-hygiene-in-xcode/
