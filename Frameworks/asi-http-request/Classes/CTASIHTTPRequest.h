@@ -74,7 +74,7 @@ extern NSString* const CTNetworkRequestErrorDomain;
 // You can use this number to throttle upload and download bandwidth in iPhone OS apps send or receive a large amount of data
 // This may help apps that might otherwise be rejected for inclusion into the app store for using excessive bandwidth
 // This number is not official, as far as I know there is no officially documented bandwidth limit
-extern unsigned long const ASIWWANBandwidthThrottleAmount;
+extern unsigned long const ASIWWANBandwidthThrottleAmount_qy;
 
 #if NS_BLOCKS_AVAILABLE
 typedef void (^ASIBasicBlock)(void);
