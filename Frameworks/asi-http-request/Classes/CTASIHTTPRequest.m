@@ -27,7 +27,7 @@
 #import "CTASIDataCompressor.h"
 
 // Automatically set on build
-NSString *ASIHTTPRequestVersion = @"v1.8.1-61 2011-09-19";
+NSString *ASIHTTPRequestVersion_qy = @"v1.8.1-61 2011-09-19";
 
 static NSString *defaultUserAgent = nil;
 
@@ -48,7 +48,7 @@ static NSRecursiveLock *sessionCredentialsLock = nil;
 static NSMutableArray *sessionCookies = nil;
 
 // The number of times we will allow requests to redirect before we fail with a redirection error
-const int RedirectionLimit = 5;
+const int RedirectionLimit_qy = 5;
 
 // The default number of seconds to use for a timeout
 static NSTimeInterval defaultTimeOutSeconds = 10;
@@ -98,7 +98,7 @@ static NSLock *bandwidthThrottlingLock = nil;
 static unsigned long maxBandwidthPerSecond = 0;
 
 // A default figure for throttling bandwidth on mobile devices
-unsigned long const ASIWWANBandwidthThrottleAmount = 14800;
+unsigned long const ASIWWANBandwidthThrottleAmount_qy = 14800;
 
 #if TARGET_OS_IPHONE
 // YES when bandwidth throttling is active
@@ -1465,7 +1465,7 @@ static NSOperationQueue *sharedQueue = nil;
 	[self setNeedsRedirect:NO];
 	[self setRedirectCount:[self redirectCount]+1];
 
-	if ([self redirectCount] > RedirectionLimit) {
+	if ([self redirectCount] > RedirectionLimit_qy) {
 		// Some naughty / badly coded website is trying to force us into a redirection loop. This is not cool.
 		[self failWithError:ASITooMuchRedirectionError];
 		[self setComplete:YES];
@@ -4645,7 +4645,7 @@ static NSOperationQueue *sharedQueue = nil;
 + (void)setShouldThrottleBandwidthForWWAN:(BOOL)throttle
 {
 	if (throttle) {
-		[CTASIHTTPRequest throttleBandwidthForWWANUsingLimit:ASIWWANBandwidthThrottleAmount];
+		[CTASIHTTPRequest throttleBandwidthForWWANUsingLimit:ASIWWANBandwidthThrottleAmount_qy];
 	} else {
 		[CTASIHTTPRequest unsubscribeFromNetworkReachabilityNotifications];
 		[CTASIHTTPRequest setMaxBandwidthPerSecond:0];
